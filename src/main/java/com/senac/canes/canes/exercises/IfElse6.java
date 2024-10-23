@@ -6,22 +6,33 @@ public class IfElse6 {
 
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        System.out.println("Digite sua altura em centimetros");
-        int altura = s.nextInt();
-        System.out.println("Digite seu sexo: 1 para homem | 2 para mulher");
-        var sexo = s.nextInt();
 
 
-        if(sexo != 1 && sexo != 2){
-            System.out.println("Digite o numero certo na escolha do sexo");
+        System.out.print("Digite a altura da pessoa (em metros): ");
+        double altura = s.nextDouble();
+
+
+        System.out.print("Digite o sexo da pessoa (1: feminino, 2: masculino): ");
+        int sexo = s.nextInt();
+
+        //variavel auxiliar para conta
+        double pesoIdeal = 0;
+
+
+        if (sexo == 1) {
+
+            pesoIdeal = (62.1 * altura) - 44.7;
+        } else if (sexo == 2) {
+
+            pesoIdeal = (72.7 * altura) - 58;
         } else {
-            if (sexo == 1) {
-                var calcular = (72.7 * altura) - 58;
-                System.out.println("Seu peso ideal é " + calcular);
-            } else if (sexo == 2) {
-                var calcular = (62.1 * altura) - 44.7;
-                System.out.println("Seu peso ideal é " + calcular);
-            }
+
+            System.out.println("Sexo inválido! Digite 1 para feminino ou 2 para masculino.");
+
+        }
+
+
+        System.out.printf("O peso ideal é: %.2f kg%n", pesoIdeal);
     }
 }
-    }
+
